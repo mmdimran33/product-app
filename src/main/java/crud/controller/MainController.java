@@ -63,16 +63,18 @@ public class MainController {
 		return "edit";
 
 	}
-
-	@RequestMapping(value = "/updateProduct", method = RequestMethod.GET)
-	public String updateProduct(Model m, Product prodct) {
-		productDao.updateProduct(prodct);
-
-		System.out.println("data is uapadted recrd coming ************" + prodct);
-		System.out.println("data has been updated*************************");
-		return "redirect:/viewemp";
-
-	}
+	
+	  @RequestMapping(value = "/updateProduct", method = RequestMethod.GET) 
+	  public String updateProduct(Model m, Product prodct) {
+	  productDao.updateProduct(prodct);
+	  
+	  System.out.println("data is uapadted recrd coming ************" + prodct);
+	  System.out.println("data has been updated*************************"); 
+	  return "redirect:/viewemp";
+	  
+	  
+	  }
+	 
 
 	@RequestMapping("/back")
 	public String back(Model m) {
