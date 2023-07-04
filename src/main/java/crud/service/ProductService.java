@@ -1,5 +1,5 @@
 package crud.service;
 
-public interface Service {
-
+public interface  ProductService {
+	public void deleteProduct(int id);
 }
