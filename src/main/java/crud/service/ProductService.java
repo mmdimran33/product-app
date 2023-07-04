@@ -1,5 +1,8 @@
 package crud.service;
 
+import crud.model.Product;
+
 public interface ProductService {
-	public String editProduct(int id);
+	public void updateProduct(Product prodct);
+	
 }

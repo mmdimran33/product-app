@@ -1,16 +1,26 @@
 package crud.serviceimpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+ 
 import crud.dao.ProductDao;
+import crud.model.Product;
 import crud.service.ProductService;
-
+@Service
 public class ProductServiceImpl implements ProductService {
 
+	@Autowired
 	private ProductDao productdao;
 
 	@Override
-	public String editProduct(int id) {
-		this.productdao.editProduct(id);
-		return "edit";
+	public void updateProduct(Product prodct) {
+		
+	this.productdao.updateProduct(prodct);
+	
+
 	}
+
+	
+
 
 }
