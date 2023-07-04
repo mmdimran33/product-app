@@ -19,11 +19,15 @@ import crud.service.ProductService;
 public class MainController {
 	
 	@Autowired
+	private ProductDao productDao;
+	@Autowired
+	private ProductService productService;
+	
+	private Product id;
 	private ProductService productService;
 	
     @Autowired
     private ProductDao productDao;
-	
 
 	@RequestMapping("/")
 	public String home(Model m) {
@@ -52,7 +56,8 @@ public class MainController {
 	@RequestMapping(value = "/deleteProduct/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable(value = "id") int id, Model m) {
 		System.out.println("delete ID" + id);
-		productDao.deleteProduct(id);
+		//productDao.deleteProduct(id);
+		productService.deleteProduct(id);
 		return "redirect:/viewemp";
 
 	}
@@ -88,7 +93,7 @@ public class MainController {
 	 
 	 
 
-	@RequestMapping("/back")
+	@RequestMapping("/back")   
 	public String back(Model m) {
 		return "addProduct";
 	}
