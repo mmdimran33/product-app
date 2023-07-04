@@ -46,12 +46,13 @@ public class ProductDao {
 		this.hibernateTemplate.delete(p);
 	}
 
-	public Product editProduct(int id) {
-
-		Product e = (Product) hibernateTemplate.get(Product.class, id);
-		return e;
-
-	}
+	
+	  public Product editProduct(int id) {
+	  
+	  Product e = (Product) hibernateTemplate.get(Product.class, id); return e;
+	  
+	  }
+	 
 
 	@Transactional
 	public void updateProduct(Product prodct) {

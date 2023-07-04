@@ -1,5 +1,8 @@
 package crud.service;
 
-public interface Service {
+import crud.model.Product;
 
+public interface ProductService {
+	public void updateProduct(Product prodct);
+	
 }
