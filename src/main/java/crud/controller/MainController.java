@@ -17,12 +17,17 @@ import crud.service.ProductService;
 
 @Controller
 public class MainController {
+	
 	@Autowired
 	private ProductDao productDao;
 	@Autowired
 	private ProductService productService;
 	
 	private Product id;
+	private ProductService productService;
+	
+    @Autowired
+    private ProductDao productDao;
 
 	@RequestMapping("/")
 	public String home(Model m) {
@@ -57,27 +62,36 @@ public class MainController {
 
 	}
 
-	@RequestMapping(value = "/editProduct/{id}", method = RequestMethod.GET)
-	public String edit(@PathVariable int id, Model m) {
-		System.out.println("edit comimg the page&&&&&&&&&&&&&&&&&&&" + id);
+	
+	  @RequestMapping(value = "/editProduct/{id}", method = RequestMethod.GET)
+	  public String edit(@PathVariable int id, Model m) {
+	  System.out.println("edit comimg the page&&&&&&&&&&&&&&&&&&&" + id);
+	  
+	  Product list = productDao.editProduct(id);
+	  System.out.println("id is coming from databases;" + list);
+	  m.addAttribute("listbyid", list);
+	  
+	  return "edit";
+	  
+}
+	 
 
-		Product list = productDao.editProduct(id);
-		System.out.println("id is coming from databases;" + list);
-		m.addAttribute("listbyid", list);
+	
 
-		return "edit";
-
-	}
-
-	@RequestMapping(value = "/updateProduct", method = RequestMethod.GET)
-	public String updateProduct(Model m, Product prodct) {
-		productDao.updateProduct(prodct);
-
-		System.out.println("data is uapadted recrd coming ************" + prodct);
-		System.out.println("data has been updated*************************");
-		return "redirect:/viewemp";
-
-	}
+  @RequestMapping(value = "/updateProduct", method = RequestMethod.GET) 
+  public String updateProduct(Model m, Product prodct) {
+  productService.updateProduct(prodct);
+  
+  System.out.println("data is uapadted recrd coming ************" + prodct);
+  System.out.println("data has been updated*************************"); 
+  
+  return "redirect:/viewemp";
+  
+  
+  }
+ 
+	 
+	 
 
 	@RequestMapping("/back")   
 	public String back(Model m) {
