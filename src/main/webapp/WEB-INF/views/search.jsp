@@ -22,7 +22,7 @@
 					<div class="form-group">
 						<label for="name">Search by Id</label> <input type="text"
 							class="form-control" id="id" aria-describedby="emailHelp"
-							name="id" placeholder="Enter the Product id">
+							name="id" placeholder="Enter the Product id" required>
 						<!--  <button type="submit" class="btn btn-primary">Done</button> -->
 						<input type="submit" value="Search" class="btn btn-primary">
 					</div>
