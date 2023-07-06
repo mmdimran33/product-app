@@ -19,7 +19,7 @@
 					<div class="form-group">
 						<label for="name">Product Name</label> <input type="text"
 							class="form-control" id="name" aria-describedby="emailHelp"
-							name="name" placeholder="Enter the Product name">
+							name="name" placeholder="Enter the Product name" required>
 					</div>
 
 
@@ -29,13 +29,13 @@
 							<div class="form-group">
 						<label for="name">Product Description</label> <input type="text"
 							class="form-control" id="description" aria-describedby="emailHelp"
-							name="description" placeholder="Enter the Product description">
+							name="description" placeholder="Enter the Product description" required>
 					</div>
 				
 
 					<div class="form-group">
 						<label for="price">Product Price</label> <input type="text"
-							placeholder="Enter product price" name="price">
+							placeholder="Enter product price" name="price" required>
 					</div>
 
 					<div class="container text-center">
