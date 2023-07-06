@@ -18,12 +18,8 @@ import crud.service.ProductService;
 @Controller
 public class MainController {
 	
-	@Autowired
-	private ProductDao productDao;
-	@Autowired
-	private ProductService productService;
-	
 	private Product id;
+	@Autowired
 	private ProductService productService;
 	
     @Autowired
@@ -37,7 +33,7 @@ public class MainController {
 
 	@RequestMapping(value = "/addproduct", method = RequestMethod.POST)
 	public String addData(Model m, Product prodct) {
-
+this.productService.createProduct(prodct);
 		System.out.println(prodct);
 		int i = productDao.createProduct(prodct);
 		return "redirect:/viewemp";
@@ -108,6 +104,7 @@ public class MainController {
 
 	  @RequestMapping(value = "/searchbyid", method = RequestMethod.GET)
 	  public String searchById(@RequestParam(value = "id")int id,Model m) {
+		  this.productService.searchbyid(id);
 		  Product searchbyid = productDao.searchbyid(id);
 		  m.addAttribute("searchbyid", searchbyid);
 	      System.out.println("hello....."+id);
