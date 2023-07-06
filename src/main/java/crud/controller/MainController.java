@@ -35,7 +35,7 @@ public class MainController {
 	public String addData(Model m, Product prodct) {
 this.productService.createProduct(prodct);
 		System.out.println(prodct);
-		int i = productDao.createProduct(prodct);
+		//int i = productDao.createProduct(prodct);
 		return "redirect:/viewemp";
 	}
 
