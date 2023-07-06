@@ -62,7 +62,7 @@ public class ProductDao {
 
 	}
 
-	public crud.model.Product searchbyid(int id) {
+	public Product searchbyid(int id) {
 		
 		Product e = (Product) hibernateTemplate.get(Product.class, id);
 		System.out.println("Search DAO......."+id);
