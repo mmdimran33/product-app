@@ -25,7 +25,7 @@ public class MainController {
     @Autowired
     private ProductDao productDao;
 
-	@RequestMapping("/")
+	@RequestMapping("/ee")
 	public String home(Model m) {
 
 		return "addProduct";
