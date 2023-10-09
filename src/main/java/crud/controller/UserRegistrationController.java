@@ -60,6 +60,9 @@ public class UserRegistrationController {
 
 			}else {
 			System.out.println("User is not valiad....");
+			
+			
+			System.out.println("Request mapping....");
 
 			}
 			

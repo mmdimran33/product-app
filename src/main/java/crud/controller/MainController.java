@@ -35,6 +35,7 @@ public class MainController {
 	public String addData(Model m, Product prodct) {
 this.productService.createProduct(prodct);
 		System.out.println(prodct);
+		System.out.println("Request mapping");
 		//int i = productDao.createProduct(prodct);
 		return "redirect:/viewemp";
 	}
@@ -111,8 +112,11 @@ this.productService.createProduct(prodct);
 	  
 	  return "search";
 	  
+	 
+	  
 	  
 	  }
+	 
 		 
 	
 	 
